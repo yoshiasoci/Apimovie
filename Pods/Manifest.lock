@@ -1,0 +1,101 @@
+PODS:
+  - Alamofire (5.2.2)
+  - MaterialComponents/AnimationTiming (118.0.0)
+  - MaterialComponents/Availability (118.0.0)
+  - MaterialComponents/BottomNavigation (118.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Cards (118.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+  - MaterialComponents/Elevation (118.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (118.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Palettes (118.0.0)
+  - MaterialComponents/private/Application (118.0.0)
+  - MaterialComponents/private/Color (118.0.0):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/Icons/Base (118.0.0)
+  - MaterialComponents/private/Icons/ic_check_circle (118.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Math (118.0.0)
+  - MaterialComponents/Ripple (118.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (118.0.0)
+  - MaterialComponents/ShadowLayer (118.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (118.0.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Typography (118.0.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+    - MDFTextAccessibility
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
+  - PINCache (3.0.2):
+    - PINCache/Arc-exception-safe (= 3.0.2)
+    - PINCache/Core (= 3.0.2)
+  - PINCache/Arc-exception-safe (3.0.2):
+    - PINCache/Core
+  - PINCache/Core (3.0.2):
+    - PINOperation (~> 1.2.0)
+  - PINOperation (1.2)
+  - PINRemoteImage (3.0.1):
+    - PINRemoteImage/PINCache (= 3.0.1)
+  - PINRemoteImage/Core (3.0.1):
+    - PINOperation
+  - PINRemoteImage/PINCache (3.0.1):
+    - PINCache (~> 3.0.1)
+    - PINRemoteImage/Core
+
+DEPENDENCIES:
+  - Alamofire
+  - MaterialComponents/BottomNavigation
+  - MaterialComponents/Cards
+  - PINRemoteImage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  MaterialComponents: 333a09d55de4bc53e0e2e08f178c6f29cfe8645f
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  PINCache: bea7c404c360f6fe0f6ee783c5cd14e778fa2aab
+  PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
+  PINRemoteImage: 3b7cedb118c2d357f87e9eabc7c81ba0202cb236
+
+PODFILE CHECKSUM: 4a1f99e16f21b1bf025387dac68f36ee837b1a87
+
+COCOAPODS: 1.9.3
