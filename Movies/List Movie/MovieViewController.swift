@@ -55,6 +55,11 @@ class MovieViewController: BaseViewController {
             return cell
 
             
+            
+            
+            
+            
+            
 //            let movie = GenreTapGesture(target: self, action: #selector(MovieViewController.openNews))
 //            cell.sourcesView.isUserInteractionEnabled = true
 //            sourcesCat.sources = sourcesModel.id
