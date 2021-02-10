@@ -14,7 +14,6 @@ class GenreViewController: BaseViewController {
     
     var genreModel : GenreModel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,7 +51,7 @@ class GenreViewController: BaseViewController {
         
             let genreMovie = GenreTapGesture(target: self, action: #selector(GenreViewController.openMovie))
             cell.detailGenre.isUserInteractionEnabled = true
-            genreMovie.genre = genresModel.name
+            genreMovie.genre_ids = genresModel.name
             cell.detailGenre.addGestureRecognizer(genreMovie)
             
             return cell
@@ -60,7 +59,7 @@ class GenreViewController: BaseViewController {
         
         @objc func openMovie(sender: GenreTapGesture){
             let changePass = MovieViewController()
-            changePass.genre = sender.genre
+            changePass.genre_ids = sender.genre_ids
             changePass.modalPresentationStyle = .fullScreen
             self.present(changePass, animated: true, completion: nil)
         }

@@ -14,14 +14,16 @@ class MovieViewController: BaseViewController {
         UIBarButtonItem!
     
     var movieModel : MovieModel!
-    var genre : String!
+    var genreModel : GenreModel!
+    
+    var genre_ids : String!
     var id : String!
     override func viewDidLoad() {
     super.viewDidLoad()
         listMovie.delegate = self
         listMovie.dataSource = self
         
-        getRequest(url: "/discover/movie?api_key=\(MoviesUrl.API_KEY)&genres=\(genre!)", tag: "movie")
+        getRequest(url: "/discover/movie?api_key=\(MoviesUrl.API_KEY)&with_genres=\(genre_ids!)", tag: "movie")
         let nibClass = UINib(nibName: "MovieTableViewCell", bundle: nil)
         listMovie.register(nibClass, forCellReuseIdentifier: "movieIdentifier")
         
