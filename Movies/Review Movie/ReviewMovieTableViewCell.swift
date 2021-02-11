@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialCards
 
 class ReviewMovieTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var createdLabel: UILabel!
+    @IBOutlet weak var reviewText: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,7 +21,7 @@ class ReviewMovieTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+     
     }
     
 }

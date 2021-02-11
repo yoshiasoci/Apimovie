@@ -9,7 +9,7 @@ import Foundation
 struct DetailModel: Decodable {
     let adult: Bool
     let backdropPath: String
-    let belongsToCollection: BelongsToCollection
+    let belongsToCollection: BelongsToCollection?
     let budget: Int
     let genres: [Genres]
     let homepage: String
@@ -27,7 +27,8 @@ struct DetailModel: Decodable {
     let status : String?
     let tagline, title: String
     let video: Bool
-    let voteAverage, voteCount: Int
+    let voteAverage: Double
+    let voteCount: Int
 
     enum CodingKeys: String, CodingKey {
         case adult

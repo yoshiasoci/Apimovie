@@ -70,12 +70,14 @@ PODS:
   - PINRemoteImage/PINCache (3.0.1):
     - PINCache (~> 3.0.1)
     - PINRemoteImage/Core
+  - YoutubePlayer-in-WKWebView (0.3.5)
 
 DEPENDENCIES:
   - Alamofire
   - MaterialComponents/BottomNavigation
   - MaterialComponents/Cards
   - PINRemoteImage
+  - YoutubePlayer-in-WKWebView (~> 0.3.0)
 
 SPEC REPOS:
   trunk:
@@ -86,6 +88,7 @@ SPEC REPOS:
     - PINCache
     - PINOperation
     - PINRemoteImage
+    - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -95,7 +98,8 @@ SPEC CHECKSUMS:
   PINCache: bea7c404c360f6fe0f6ee783c5cd14e778fa2aab
   PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
   PINRemoteImage: 3b7cedb118c2d357f87e9eabc7c81ba0202cb236
+  YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
 
-PODFILE CHECKSUM: 4a1f99e16f21b1bf025387dac68f36ee837b1a87
+PODFILE CHECKSUM: 768ee0f9762f965208bc107578cd4c602630d73f
 
 COCOAPODS: 1.9.3

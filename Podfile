@@ -8,6 +8,7 @@ target 'Movies' do
 	 pod 'PINRemoteImage'  
  	 pod 'MaterialComponents/Cards'
  	 pod 'MaterialComponents/BottomNavigation'
+	pod "YoutubePlayer-in-WKWebView", "~> 0.3.0" 
 
 
 

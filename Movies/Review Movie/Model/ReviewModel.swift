@@ -20,9 +20,11 @@ struct ReviewModel: Decodable {
 
 // MARK: - Result
 struct Results: Decodable {
-    let author: String
+    let author: String?
     let authorDetails: AuthorDetails
-    let content, createdAt, id, updatedAt: String
+    let id, updatedAt: String
+    let content: String?
+    let createdAt: String?
     let url: String
 
     enum CodingKeys: String, CodingKey {
@@ -38,8 +40,9 @@ struct Results: Decodable {
 
 // MARK: - AuthorDetails
 struct AuthorDetails: Codable {
-    let name, username, avatarPath: String
-    let rating: Int
+    let name, username: String
+    let avatarPath: String?
+    let rating: Int?
 
     enum CodingKeys: String, CodingKey {
         case name, username
