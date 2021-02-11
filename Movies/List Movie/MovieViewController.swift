@@ -36,6 +36,9 @@ class MovieViewController: BaseViewController {
             print(error.localizedDescription)
         }
     }
+    override func onFailed(tag: String) {
+        showToast(message: "Data Not Found, Try Again Later!", font: .systemFont(ofSize: 12.0))
+    }
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
