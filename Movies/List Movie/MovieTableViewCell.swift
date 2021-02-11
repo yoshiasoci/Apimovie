@@ -6,12 +6,14 @@
 //
 
 import UIKit
-
+import MaterialComponents.MaterialCards
 class MovieTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageMovie: UIImageView!
     @IBOutlet weak var titleMovie: UILabel!
     @IBOutlet weak var overviewMovie: UILabel!
+    @IBOutlet weak var contentMovie: MDCCard!
+    @IBOutlet weak var overviewText: UITextView!
     
     
     override func awakeFromNib() {

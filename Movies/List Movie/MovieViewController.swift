@@ -14,10 +14,8 @@ class MovieViewController: BaseViewController {
         UIBarButtonItem!
     
     var movieModel : MovieModel!
-    var genreModel : GenreModel!
-    
     var genre_ids : String!
-    var id : String!
+
     override func viewDidLoad() {
     super.viewDidLoad()
         listMovie.delegate = self
@@ -53,19 +51,21 @@ class MovieViewController: BaseViewController {
             
             let moviesModel: Result = (movieModel?.results[indexPath.row])!
             cell.titleMovie.text = moviesModel.title
-            cell.overviewMovie.text = moviesModel.overview
+           // cell.overviewMovie.text = moviesModel.overview
+            cell.overviewText.text = moviesModel.overview
+            let listMovie = MovieTapGesture(target: self, action: #selector(MovieViewController.openDetail))
+            cell.contentMovie.isUserInteractionEnabled = true
+            listMovie.movie = String(moviesModel.id)
+            cell.contentMovie.addGestureRecognizer(listMovie)
+            
             return cell
-
-            
-            
-            
-            
-            
-            
-//            let movie = GenreTapGesture(target: self, action: #selector(MovieViewController.openNews))
-//            cell.sourcesView.isUserInteractionEnabled = true
-//            sourcesCat.sources = sourcesModel.id
-//            cell.sourcesView.addGestureRecognizer(sourcesCat)
         }
-        
+        @objc func openDetail(sender: MovieTapGesture){
+            let changePass = DetailMovieViewController()
+            changePass.movie_id = sender.movie
+            changePass.modalPresentationStyle = .fullScreen
+            self.present(changePass, animated: true, completion: nil)
+        }
     }
+    
+    

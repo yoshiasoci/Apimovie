@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,71 +11,88 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieIdentifier" rowHeight="264" id="KGk-i7-Jjw" customClass="MovieTableViewCell" customModule="Movies" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="469" height="264"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieIdentifier" rowHeight="271" id="KGk-i7-Jjw" customClass="MovieTableViewCell" customModule="Movies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="504" height="271"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="469" height="264"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="504" height="271"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWW-MY-Vg9" customClass="MDCCard">
-                        <rect key="frame" x="8" y="16" width="443" height="222"/>
+                        <rect key="frame" x="10" y="10" width="484" height="250"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgM-zx-pxi">
-                                <rect key="frame" x="30" y="5" width="126" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Movie Titles:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbv-qZ-CVy">
+                                <rect key="frame" x="8" y="10" width="125" height="22.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="126" id="JaN-gd-cxr"/>
-                                    <constraint firstAttribute="height" constant="37" id="iJi-sE-AeR"/>
+                                    <constraint firstAttribute="width" constant="125" id="bdC-QP-Qbw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" name="Color_ C43527"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BBu-YQ-XKw">
-                                <rect key="frame" x="378" y="0.0" width="57" height="50"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TU-8W-9W7">
-                                <rect key="frame" x="30" y="50" width="405" height="162"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgM-zx-pxi">
+                                <rect key="frame" x="141" y="10" width="333" height="22.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="Www-gm-CZd"/>
+                                    <constraint firstAttribute="width" constant="333" id="o9x-Ut-85J"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" name="Color_ C43527"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Overview:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI3-9H-1vL">
+                                <rect key="frame" x="8" y="42.5" width="126" height="22.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" name="Color_ C43527"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Overview" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7n-G3-3GD">
+                                <rect key="frame" x="139" y="37.5" width="337" height="197.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BBu-YQ-XKw" firstAttribute="leading" secondItem="xgM-zx-pxi" secondAttribute="trailing" constant="222" id="Bwx-Mg-Y02"/>
-                            <constraint firstItem="xgM-zx-pxi" firstAttribute="leading" secondItem="oWW-MY-Vg9" secondAttribute="leading" constant="30" id="HA1-cd-ZVh"/>
-                            <constraint firstItem="5TU-8W-9W7" firstAttribute="top" secondItem="xgM-zx-pxi" secondAttribute="bottom" constant="8" symbolic="YES" id="Qhu-Ws-kom"/>
-                            <constraint firstAttribute="bottom" secondItem="5TU-8W-9W7" secondAttribute="bottom" constant="10" id="ShD-mn-pqD"/>
-                            <constraint firstItem="xgM-zx-pxi" firstAttribute="top" secondItem="oWW-MY-Vg9" secondAttribute="top" constant="5" id="UnW-Bv-oQ3"/>
-                            <constraint firstAttribute="trailing" secondItem="5TU-8W-9W7" secondAttribute="trailing" constant="8" id="VWP-YJ-SOc"/>
-                            <constraint firstItem="5TU-8W-9W7" firstAttribute="top" secondItem="BBu-YQ-XKw" secondAttribute="bottom" id="lG8-Kf-6mv"/>
-                            <constraint firstAttribute="trailing" secondItem="BBu-YQ-XKw" secondAttribute="trailing" constant="8" id="tPz-Fp-Dsc"/>
-                            <constraint firstItem="5TU-8W-9W7" firstAttribute="leading" secondItem="oWW-MY-Vg9" secondAttribute="leading" constant="30" id="zhW-Zj-keg"/>
+                            <constraint firstItem="wI3-9H-1vL" firstAttribute="leading" secondItem="oWW-MY-Vg9" secondAttribute="leading" constant="8" id="6zW-vg-TX3"/>
+                            <constraint firstItem="xgM-zx-pxi" firstAttribute="leading" secondItem="bbv-qZ-CVy" secondAttribute="trailing" constant="8" symbolic="YES" id="7Pg-lz-E0F"/>
+                            <constraint firstAttribute="height" constant="250" id="9P9-oG-6xD"/>
+                            <constraint firstItem="P7n-G3-3GD" firstAttribute="leading" secondItem="wI3-9H-1vL" secondAttribute="trailing" constant="5" id="Efa-x6-RXv"/>
+                            <constraint firstItem="bbv-qZ-CVy" firstAttribute="top" secondItem="oWW-MY-Vg9" secondAttribute="top" constant="10" id="FKt-Mn-vtb"/>
+                            <constraint firstItem="bbv-qZ-CVy" firstAttribute="height" secondItem="xgM-zx-pxi" secondAttribute="height" id="Fgo-Uy-peN"/>
+                            <constraint firstAttribute="bottom" secondItem="P7n-G3-3GD" secondAttribute="bottom" constant="15" id="GZ9-cY-b41"/>
+                            <constraint firstItem="wI3-9H-1vL" firstAttribute="width" secondItem="bbv-qZ-CVy" secondAttribute="width" multiplier="1.008" id="OdC-nW-vlc"/>
+                            <constraint firstAttribute="trailing" secondItem="P7n-G3-3GD" secondAttribute="trailing" constant="8" id="Pbu-Eb-XXi"/>
+                            <constraint firstItem="bbv-qZ-CVy" firstAttribute="leading" secondItem="oWW-MY-Vg9" secondAttribute="leading" constant="8" id="dbd-ol-GIk"/>
+                            <constraint firstItem="xgM-zx-pxi" firstAttribute="top" secondItem="oWW-MY-Vg9" secondAttribute="top" constant="10" id="gr0-8X-YPJ"/>
+                            <constraint firstItem="P7n-G3-3GD" firstAttribute="top" secondItem="xgM-zx-pxi" secondAttribute="bottom" constant="5" id="qFi-3h-nYA"/>
+                            <constraint firstItem="wI3-9H-1vL" firstAttribute="top" secondItem="bbv-qZ-CVy" secondAttribute="bottom" constant="10" id="uMW-ik-Vbm"/>
+                            <constraint firstAttribute="trailing" secondItem="xgM-zx-pxi" secondAttribute="trailing" constant="10" id="uNq-FJ-btX"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="Color_ C43527"/>
                 <constraints>
-                    <constraint firstItem="oWW-MY-Vg9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="CEX-jU-jCb"/>
-                    <constraint firstAttribute="trailing" secondItem="oWW-MY-Vg9" secondAttribute="trailing" constant="18" id="Nad-OM-Gov"/>
-                    <constraint firstAttribute="bottom" secondItem="oWW-MY-Vg9" secondAttribute="bottom" constant="26" id="gbw-tp-ZlL"/>
-                    <constraint firstItem="BBu-YQ-XKw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="qCW-d7-QZa"/>
-                    <constraint firstItem="oWW-MY-Vg9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="yCc-kN-Tqf"/>
+                    <constraint firstAttribute="bottom" secondItem="oWW-MY-Vg9" secondAttribute="bottom" constant="10" id="JDc-3f-HzN"/>
+                    <constraint firstAttribute="trailing" secondItem="oWW-MY-Vg9" secondAttribute="trailing" constant="10" id="NS6-TW-xVE"/>
+                    <constraint firstItem="oWW-MY-Vg9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="kGy-Vd-QEi"/>
+                    <constraint firstItem="oWW-MY-Vg9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="waX-aH-1OO"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="imageMovie" destination="BBu-YQ-XKw" id="ZB4-CF-2G6"/>
-                <outlet property="overviewMovie" destination="5TU-8W-9W7" id="zXi-WP-mtM"/>
+                <outlet property="contentMovie" destination="oWW-MY-Vg9" id="H6p-gy-bBh"/>
+                <outlet property="overviewText" destination="P7n-G3-3GD" id="zFQ-bH-f6u"/>
                 <outlet property="titleMovie" destination="xgM-zx-pxi" id="hOb-DK-Oxc"/>
             </connections>
-            <point key="canvasLocation" x="248.55072463768118" y="123.88392857142857"/>
+            <point key="canvasLocation" x="285.50724637681162" y="86.71875"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="Color_ C43527">
+            <color red="0.76899999380111694" green="0.20800000429153442" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

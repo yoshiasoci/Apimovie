@@ -9,13 +9,20 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var movieButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func seeButton(_ sender: Any) {
+        let see = GenreViewController()
+        see.modalPresentationStyle = .fullScreen
+        self.present(see, animated: true, completion: nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 

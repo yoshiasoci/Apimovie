@@ -21,13 +21,15 @@ struct MovieModel: Decodable {
 // MARK: - Result
 struct Result: Decodable {
     let adult: Bool
-    let backdropPath: String
+    let backdropPath: String?
     let genreIDS: [Int]
     let id: Int
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String
     let originalTitle, overview: String
     let popularity: Double
-    let posterPath, releaseDate, title: String
+    let posterPath: String?
+    let releaseDate: String?
+    let title: String
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
@@ -48,10 +50,5 @@ struct Result: Decodable {
     }
 }
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case es = "es"
-    case ko = "ko"
-    case zh = "zh"
-}
+
 
