@@ -1,12 +1,6 @@
-//
-//  BaseViewController.swift
-//  Digitalent
-//
-//  Created by Teke on 16/10/20.
-//
-
 import UIKit
 import Alamofire
+import Moya
 
 class BaseViewController: UIViewController {
     
@@ -31,6 +25,34 @@ class BaseViewController: UIViewController {
                         }
                    }
     }
+    
+//    func getRequest(tag: String) {
+//        let provider = MoyaProvider<MovieApi>()
+//        provider.request(.genre(apikey: "API_KEY")) { (result) in
+//            switch result {
+//            case .success(let response):
+//                print(response.statusCode)
+//                //self.onSuccess(data: data, tag: tag)
+//            case .failure(let error):
+//               // self.onFailed(tag: tag)
+//                print(error.errorDescription ?? "")
+//
+//            }
+//        }
+//    }
+    
+//    func getRequest2(tag: String) {
+//        let provider = MoyaProvider<MovieApi>()
+//        provider.request(.function2(params: "4567")) { (result) in
+//            switch result {
+//            case .success(let response):
+//                break
+//                //self.onSuccess(data: data, tag: tag)
+//            case .failure(let error):
+//                self.onFailed(tag: tag)
+//            }
+//        }
+//    }
     
     func postRequest(url: String, parameters: [String:Any], tag: String){
         

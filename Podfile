@@ -4,15 +4,13 @@
 target 'Movies' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  	pod 'Alamofire' 
+
+  # Pods for Movies
 	 pod 'PINRemoteImage'  
  	 pod 'MaterialComponents/Cards'
  	 pod 'MaterialComponents/BottomNavigation'
 	pod "YoutubePlayer-in-WKWebView", "~> 0.3.0" 
-
-
-
-  # Pods for Movies
+	pod 'Moya', '~> 14.0'
 
   target 'MoviesTests' do
     inherit! :search_paths

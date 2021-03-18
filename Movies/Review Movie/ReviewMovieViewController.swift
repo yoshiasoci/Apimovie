@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Moya
 
 class ReviewMovieViewController: BaseViewController {
 
@@ -19,8 +20,8 @@ class ReviewMovieViewController: BaseViewController {
         super.viewDidLoad()
         listReview.delegate = self
         listReview.dataSource = self
-        
-        getRequest(url: "/movie/\(movie_id ?? "")/reviews?api_key=\(MoviesUrl.API_KEY)", tag: "review")
+//
+//        getRequest(url: "/movie/\(movie_id ?? "")/reviews?api_key=\(MoviesUrl.API_KEY)", tag: "review")
         let nibClass = UINib(nibName: "ReviewMovieTableViewCell", bundle: nil)
         listReview.register(nibClass, forCellReuseIdentifier: "reviewIdentifier")
 

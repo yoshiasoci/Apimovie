@@ -23,9 +23,9 @@ class TrailerViewController: BaseViewController {
         listTrailer.delegate = self
         listTrailer.dataSource = self
         
-        getRequest(url: "/movie/\(movie_id ?? "")/videos?api_key=\(MoviesUrl.API_KEY)", tag: "trailer")
-        let nibClass = UINib(nibName: "TrailerTableViewCell", bundle: nil)
-        listTrailer.register(nibClass, forCellReuseIdentifier: "trailerIdentifier")
+//        getRequest(url: "/movie/\(movie_id ?? "")/videos?api_key=\(MoviesUrl.API_KEY)", tag: "trailer")
+//        let nibClass = UINib(nibName: "TrailerTableViewCell", bundle: nil)
+//        listTrailer.register(nibClass, forCellReuseIdentifier: "trailerIdentifier")
 
     }
     override func onSuccess(data: Data, tag: String) {
@@ -60,10 +60,5 @@ class TrailerViewController: BaseViewController {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 200
         }
-
-    
-    
-
-
-  
-}
+        
+    }
