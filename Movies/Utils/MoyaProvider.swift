@@ -12,6 +12,7 @@ enum MovieApi {
     case genre(apikey: String)
     case movie(genreId: String)
     case detail(movieId: String)
+    case review(
     
 }
 extension MovieApi: TargetType {
@@ -27,8 +28,8 @@ extension MovieApi: TargetType {
             return "genre/movie/list"
         case .movie:
             return "discover/movie"
-        case .detail:
-            return "movie/movie_id"
+        case .detail(let movieId):
+            return "movie/\(movieId)"
         }
     }
     var method: Moya.Method {
@@ -39,15 +40,15 @@ extension MovieApi: TargetType {
     }
     
     var task: Task {
-        
         switch self {
         case .genre:
             return .requestParameters(parameters: ["api_key": MoviesUrl.API_KEY], encoding: URLEncoding.default)
             
         case .movie(let genreId):
             return .requestParameters(parameters: ["with_genres" : genreId, "api_key": MoviesUrl.API_KEY], encoding: URLEncoding.default)
+            
         case .detail(let movieId):
-            return .requestParameters(parameters: ["movie_id" : movieId, "api_key": MoviesUrl.API_KEY], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["api_key": MoviesUrl.API_KEY], encoding: URLEncoding.default)
         }
         }
     

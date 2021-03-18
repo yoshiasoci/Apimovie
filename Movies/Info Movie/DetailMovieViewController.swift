@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 import Alamofire
 import MaterialComponents.MaterialCards
 
@@ -26,27 +27,44 @@ class DetailMovieViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getRequest(url: "/movie/\(movie_id ?? "")?api_key=\(MoviesUrl.API_KEY)", tag: "movie")
+       // getRequest(url: "/movie/\(movie_id ?? "")?api_key=\(MoviesUrl.API_KEY)", tag: "movie")
+        let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
+        let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
+        
+        let provider = MoyaProvider<MovieApi>(plugins: [networkLogger])
+        provider.request(.detail(movieId: movie_id)) { [self] (result) in
+            switch result {
+            case .success(let response):
+                do{
+                    let details: DetailModel = try response.map(DetailModel.self)
+                    self.detailModel = details
+                    self.releasedateLabel.text = detailModel.releaseDate
+                    self.overviewText.text = detailModel.overview
+                    self.statusLabel.text = detailModel.status
+                    //testttttafatttae
+                }
+                catch {
+                    debugPrint("error")
+                }
+                break
+            case .failure(let error):
+                debugPrint(error)
+                break
+            }
+        }
+        
     }
-    override func onSuccess(data: Data, tag: String) {
-        do{
-            let decoder = JSONDecoder()
-            self.detailModel = try decoder.decode(DetailModel.self, from:data)
-            self.statusLabel.text = detailModel.status
-
-           // self.revenueLabel.text = String(detailModel.revenue)
-            self.releasedateLabel.text = detailModel.releaseDate
-            self.overviewText.text = detailModel.overview
-            
-           }catch{
-               print(error.localizedDescription)
-           }
+//           // self.revenueLabel.text = String(detailModel.revenue)
+//            self.releasedateLabel.text = detailModel.releaseDate
+//            self.overviewText.text = detailModel.overview
+//
+//           }catch{
+//               print(error.localizedDescription)
+//           }
          
-    }
-    override func onFailed(tag: String) {
-        showToast(message: "Data Not Found, Try Again Later!", font: .systemFont(ofSize: 12.0))
-    }
-    
+
+
+
     @IBAction func backButton(_ sender: Any) { self.dismiss(animated: true, completion: nil)
     }
     @IBAction func reviewButton(_ sender: Any) {
