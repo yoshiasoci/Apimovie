@@ -28,6 +28,7 @@ class DetailMovieViewController: BaseViewController {
         super.viewDidLoad()
         
        // getRequest(url: "/movie/\(movie_id ?? "")?api_key=\(MoviesUrl.API_KEY)", tag: "movie")
+        
         let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
         let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
         
@@ -41,7 +42,7 @@ class DetailMovieViewController: BaseViewController {
                     self.releasedateLabel.text = detailModel.releaseDate
                     self.overviewText.text = detailModel.overview
                     self.statusLabel.text = detailModel.status
-                    //testttttafatttae
+                    //testttttcommit
                 }
                 catch {
                     debugPrint("error")

@@ -25,6 +25,7 @@ class MovieViewController: BaseViewController {
 //        getRequest(url: "/discover/movie?api_key=\(MoviesUrl.API_KEY)&with_genres=\(genre_ids!)", tag: "movie")
         let nibClass = UINib(nibName: "MovieTableViewCell", bundle: nil)
         listMovie.register(nibClass, forCellReuseIdentifier: "movieIdentifier")
+      
         let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
         let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
         

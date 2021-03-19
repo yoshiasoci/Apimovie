@@ -13,7 +13,7 @@ class ReviewMovieViewController: BaseViewController {
 
     @IBOutlet weak var listReview: UITableView!
     var reviewModel : ReviewModel!
-    var review : String!
+    var review       : String!
     var movie_id : String!
     
     override func viewDidLoad() {
@@ -24,21 +24,43 @@ class ReviewMovieViewController: BaseViewController {
 //        getRequest(url: "/movie/\(movie_id ?? "")/reviews?api_key=\(MoviesUrl.API_KEY)", tag: "review")
         let nibClass = UINib(nibName: "ReviewMovieTableViewCell", bundle: nil)
         listReview.register(nibClass, forCellReuseIdentifier: "reviewIdentifier")
-
-    }
-    override func onSuccess(data: Data, tag: String) {
-        do{
-            let decoder = JSONDecoder()
-            self.reviewModel = try decoder.decode(ReviewModel.self, from:data)
-            self.listReview.reloadData()
-            
-        }catch{
-            print(error.localizedDescription)
+        
+        let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
+        let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
+        let provider = MoyaProvider<MovieApi>(plugins: [networkLogger])
+        provider.request(.review(movieId: movie_id)) { [self] (result) in
+            switch result {
+            case .success(let response):
+                do{
+                    let reviews: ReviewModel = try response.map(ReviewModel.self)
+                    self.reviewModel = reviews
+                    self.listReview.reloadData()
+                }
+                catch {
+                    debugPrint("error")
+                }
+                break
+            case .failure(let error):
+                debugPrint(error)
+                break
+            }
         }
+        
     }
-    override func onFailed(tag: String) {
-        self.showToast(message: "Data Not Found, Try Again Later!", font: .systemFont(ofSize: 12.0))
-    }
+
+//    override func onSuccess(data: Data, tag: String) {
+//        do{
+//            let decoder = JSONDecoder()
+//            self.reviewModel = try decoder.decode(ReviewModel.self, from:data)
+//            self.listReview.reloadData()
+//            
+//        }catch{
+//            print(error.localizedDescription)
+//        }
+//    }
+//    override func onFailed(tag: String) {
+//        self.showToast(message: "Data Not Found, Try Again Later!", font: .systemFont(ofSize: 12.0))
+//    }
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
@@ -60,11 +82,4 @@ class ReviewMovieViewController: BaseViewController {
 
             return cell
         }
-   
-    
-
-    
-
-    
-
 }

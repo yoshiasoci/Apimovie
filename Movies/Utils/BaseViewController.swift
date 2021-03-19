@@ -8,38 +8,38 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
-    func getRequest(url: String, tag: String){
-        AF.request("\(MoviesUrl.BASE_URL)\(url)",
-                   method: .get,
-                   parameters: nil,
-                   encoding: JSONEncoding.default).responseData { response in
-                    debugPrint(response)
-                    switch response.result {
-                        case .success(let data):
-                            self.onSuccess(data: data, tag: tag)
-                            break
-                        case .failure(_):
-                            self.onFailed(tag: tag)
-                            break
-                        }
-                   }
-    }
-    
-//    func getRequest(tag: String) {
-//        let provider = MoyaProvider<MovieApi>()
-//        provider.request(.genre(apikey: "API_KEY")) { (result) in
-//            switch result {
-//            case .success(let response):
-//                print(response.statusCode)
-//                //self.onSuccess(data: data, tag: tag)
-//            case .failure(let error):
-//               // self.onFailed(tag: tag)
-//                print(error.errorDescription ?? "")
-//
-//            }
-//        }
+//    
+//    func getRequest(url: String, tag: String){
+//        AF.request("\(MoviesUrl.BASE_URL)\(url)",
+//                   method: .get,
+//                   parameters: nil,
+//                   encoding: JSONEncoding.default).responseData { response in
+//                    debugPrint(response)
+//                    switch response.result {
+//                        case .success(let data):
+//                            self.onSuccess(data: data, tag: tag)
+//                            break
+//                        case .failure(_):
+//                            self.onFailed(tag: tag)
+//                            break
+//                        }
+//                   }
 //    }
+    
+    func getRequest(tag: String) {
+        let provider = MoyaProvider<MovieApi>()
+        provider.request(.genre(apikey: "API_KEY")) { (result) in
+            switch result {
+            case .success(let response):
+                print(response.statusCode)
+                //self.onSuccess(data: data, tag: tag)
+            case .failure(let error):
+               // self.onFailed(tag: tag)
+                print(error.errorDescription ?? "")
+
+            }
+        }
+    }
     
 //    func getRequest2(tag: String) {
 //        let provider = MoyaProvider<MovieApi>()
