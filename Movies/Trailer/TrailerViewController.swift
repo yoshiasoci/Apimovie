@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//test
+import Moya
 import Alamofire
 
 
@@ -24,22 +24,44 @@ class TrailerViewController: BaseViewController {
         listTrailer.dataSource = self
         
 //        getRequest(url: "/movie/\(movie_id ?? "")/videos?api_key=\(MoviesUrl.API_KEY)", tag: "trailer")
-//        let nibClass = UINib(nibName: "TrailerTableViewCell", bundle: nil)
-//        listTrailer.register(nibClass, forCellReuseIdentifier: "trailerIdentifier")
-
-    }
-    override func onSuccess(data: Data, tag: String) {
-        do{
-            let decoder = JSONDecoder()
-            self.trailerModel = try decoder.decode(TrailerModel.self, from:data)
-            self.listTrailer.reloadData()
-            
-        }catch{
-            print(error.localizedDescription)
+        let nibClass = UINib(nibName: "TrailerTableViewCell", bundle: nil)
+        listTrailer.register(nibClass, forCellReuseIdentifier: "trailerIdentifier")
+        let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
+        let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
+        let provider = MoyaProvider<MovieApi>(plugins: [networkLogger])
+        provider.request(.trailer(movieId: movie_id)) { [self] (result) in
+            switch result {
+            case .success(let response):
+                do{
+                    let trailers: TrailerModel = try response.map(TrailerModel.self)
+                    self.trailerModel = trailers
+                    self.listTrailer.reloadData()
+                }
+                catch {
+                    debugPrint("error")
+                }
+                break
+            case .failure(let error):
+                debugPrint(error)
+                break
+            }
         }
+        
     }
-    override func onFailed(tag: String) {
-        showToast(message: "Data Not Found, Try Again Later!", font: .systemFont(ofSize: 12.0))
+//    override func onSuccess(data: Data, tag: String) {
+//        do{
+//            let decoder = JSONDecoder()
+//            self.trailerModel = try decoder.decode(TrailerModel.self, from:data)
+//            self.listTrailer.reloadData()
+//
+//        }catch{
+//            print(error.localizedDescription)
+//        }
+//    }
+//    override func onFailed(tag: String) {
+//        showToast(message: "Data Not Found, Try Again Later!", font: .systemFont(ofSize: 12.0))
+//    }
+    @IBAction func backButton(_ sender: Any) { self.dismiss(animated: true, completion: nil)
     }
 }
 
